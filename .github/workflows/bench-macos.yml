@@ -16,7 +16,8 @@ on:
         default: github-macos-15
 
 env:
-  XCODEBENCHMARK_SHA: 7dadf2d7a545
+  # Full commit SHA, so a branch or tag with a similar name can never be picked instead.
+  XCODEBENCHMARK_SHA: 7dadf2d7a545cd585fdcf00f5c5247d659534823
 
 jobs:
   plan:
@@ -49,8 +50,10 @@ jobs:
       - name: Clone XcodeBenchmark
         run: |
           start=$(date +%s)
-          git clone --quiet https://github.com/devMEremenko/XcodeBenchmark.git src
-          git -C src checkout --quiet "$XCODEBENCHMARK_SHA"
+          git init --quiet src
+          git -C src fetch --quiet --depth 1 https://github.com/devMEremenko/XcodeBenchmark.git "$XCODEBENCHMARK_SHA"
+          git -C src checkout --quiet --detach FETCH_HEAD
+          test "$(git -C src rev-parse HEAD)" = "$XCODEBENCHMARK_SHA"
           echo "clone_s=$(( $(date +%s) - start ))" >> times.txt
 
       - name: Build (clean)

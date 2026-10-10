@@ -16,7 +16,8 @@ on:
         default: github-ubuntu-24.04
 
 env:
-  PROMETHEUS_TAG: v3.15.0
+  # v3.15.0, pinned by commit so a moved tag cannot change the workload.
+  PROMETHEUS_SHA: 5241a27fe3c6983549fccc32f6e65917408c63cd
 
 jobs:
   plan:
@@ -48,7 +49,10 @@ jobs:
       - name: Clone Prometheus
         run: |
           start=$(date +%s.%N)
-          git clone --quiet --depth 1 --branch "$PROMETHEUS_TAG" https://github.com/prometheus/prometheus.git src
+          git init --quiet src
+          git -C src fetch --quiet --depth 1 https://github.com/prometheus/prometheus.git "$PROMETHEUS_SHA"
+          git -C src checkout --quiet --detach FETCH_HEAD
+          test "$(git -C src rev-parse HEAD)" = "$PROMETHEUS_SHA"
           echo "clone_s=$(echo "$(date +%s.%N) - $start" | bc)" >> times.txt
 
       - uses: actions/setup-go@v5

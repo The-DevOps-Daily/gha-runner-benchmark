@@ -31,6 +31,9 @@ const median = (xs) => {
   return s.length ? (s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2) : null;
 };
 
+// Results come from artifacts, so the workload name is checked before it is
+// used in a file path.
+const WORKLOADS = new Set(["linux-prometheus", "macos-xcodebenchmark"]);
 const byWorkload = {};
 for (const workflow of ["bench-linux.yml", "bench-macos.yml"]) {
   const runs = JSON.parse(gh("run", "list", "-R", REPO, "--workflow", workflow, "--limit", "50", "--json", "databaseId,status,conclusion"));
@@ -46,6 +49,7 @@ for (const workflow of ["bench-linux.yml", "bench-macos.yml"]) {
       const file = join(dir, name, "result.json");
       if (!existsSync(file)) continue;
       const result = JSON.parse(readFileSync(file, "utf8"));
+      if (!WORKLOADS.has(result.workload)) continue;
       const job = jobs.find((j) => j.name === `build (${result.run})`);
       const seconds = job ? (Date.parse(job.completed_at) - Date.parse(job.started_at)) / 1000 : null;
       (byWorkload[result.workload] ??= []).push({
