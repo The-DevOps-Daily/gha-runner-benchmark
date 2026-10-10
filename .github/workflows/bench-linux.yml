@@ -3,6 +3,10 @@
 # and a number of runs. Each run records the machine and the time of each step.
 name: bench-linux
 on:
+  # Two runs a day at different hours until 2026-10-24, because shared runners
+  # are noisier at busy times. The plan job skips scheduled runs after that.
+  schedule:
+    - cron: "17 4,16 * * *"
   workflow_dispatch:
     inputs:
       runs:
@@ -24,18 +28,22 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       runs: ${{ steps.n.outputs.runs }}
+      go: ${{ steps.n.outputs.go }}
     steps:
       - id: n
-        run: echo "runs=$(python3 -c "import json; print(json.dumps(list(range(1, int('${{ inputs.runs }}') + 1))))")" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "runs=$(python3 -c "import json; print(json.dumps(list(range(1, int('${{ inputs.runs || '2' }}') + 1))))")" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = schedule ] && [ "$(date -u +%Y%m%d)" -ge 20261024 ]; then echo go=false; else echo go=true; fi >> "$GITHUB_OUTPUT"
 
   build:
     needs: plan
+    if: needs.plan.outputs.go == 'true'
     strategy:
       fail-fast: false
       max-parallel: 2
       matrix:
         run: ${{ fromJSON(needs.plan.outputs.runs) }}
-    runs-on: ${{ fromJSON(inputs.runner) }}
+    runs-on: ${{ fromJSON(inputs.runner || '"ubuntu-24.04"') }}
     steps:
       - name: Machine
         run: |
@@ -93,11 +101,11 @@ jobs:
           print(json.dumps(out, indent=2))
           PY
         env:
-          LABEL: ${{ inputs.label }}
+          LABEL: ${{ inputs.label || 'github-ubuntu-24.04' }}
           RUN: ${{ matrix.run }}
 
       - uses: actions/upload-artifact@v4
         with:
-          name: result-linux-${{ inputs.label }}-${{ matrix.run }}
+          name: result-linux-${{ inputs.label || 'github-ubuntu-24.04' }}-${{ matrix.run }}
           path: result.json
           retention-days: 30
