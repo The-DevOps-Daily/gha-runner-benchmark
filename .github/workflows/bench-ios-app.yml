@@ -1,0 +1,136 @@
+# iOS app workload: the unit tests of the Wikipedia iOS app, the slowest job in
+# the app's own CI ("Run Unit Tests", scheme Wikipedia), at a pinned commit and
+# with the same Xcode, simulator and xcodebuild flags. Package download, build
+# and test are timed apart. Every run starts cold.
+name: bench-ios-app
+on:
+  workflow_dispatch:
+    inputs:
+      runs:
+        description: How many runs
+        default: "1"
+      runner:
+        description: runs-on value as JSON, for example "macos-26" or ["my-pool-label"]
+        default: '"macos-26"'
+      label:
+        description: Name for this runner in the results
+        default: github-macos-26
+
+env:
+  # wikimedia/wikipedia-ios main on 2026-10-15, pinned by full commit SHA.
+  WIKIPEDIA_SHA: ca8aaeb95639ca82105bcd5510277d8dde0e420e
+  XCODE_VERSION: "26.5"
+  IOS_VERSION: "26.5"
+  SIMULATOR_NAME: iPhone 17
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      runs: ${{ steps.n.outputs.runs }}
+    steps:
+      - id: n
+        run: echo "runs=$(python3 -c "import json; print(json.dumps(list(range(1, int('${{ inputs.runs }}') + 1))))")" >> "$GITHUB_OUTPUT"
+
+  test:
+    needs: plan
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        run: ${{ fromJSON(needs.plan.outputs.runs) }}
+    runs-on: ${{ fromJSON(inputs.runner) }}
+    timeout-minutes: 90
+    steps:
+      - name: Select Xcode
+        run: |
+          # Images name the app differently (Xcode_26.5.app, Xcode-26.5.app,
+          # Xcode.app), so pick the first one that reports exactly this version.
+          for app in /Applications/Xcode*.app; do
+            if [ "$(DEVELOPER_DIR="$app/Contents/Developer" xcodebuild -version 2>/dev/null | head -1)" = "Xcode $XCODE_VERSION" ]; then
+              sudo xcode-select -s "$app/Contents/Developer"
+              break
+            fi
+          done
+          test "$(xcodebuild -version | head -1)" = "Xcode $XCODE_VERSION"
+
+      - name: Machine
+        run: |
+          {
+            echo "cpus=$(sysctl -n hw.ncpu)"
+            echo "model=$(sysctl -n machdep.cpu.brand_string)"
+            echo "memory_bytes=$(sysctl -n hw.memsize)"
+            echo "os=macOS $(sw_vers -productVersion)"
+            echo "xcode=$(xcodebuild -version | tr '\n' ' ')"
+          } | tee machine.txt
+          xcrun simctl list devices available | grep -E -- "-- iOS $IOS_VERSION --|$SIMULATOR_NAME \(" || true
+
+      - name: Clone Wikipedia iOS
+        run: |
+          start=$(date +%s)
+          git init --quiet src
+          git -C src fetch --quiet --depth 1 https://github.com/wikimedia/wikipedia-ios.git "$WIKIPEDIA_SHA"
+          git -C src checkout --quiet --detach FETCH_HEAD
+          test "$(git -C src rev-parse HEAD)" = "$WIKIPEDIA_SHA"
+          echo "clone_s=$(( $(date +%s) - start ))" >> times.txt
+
+      - name: Resolve packages (network)
+        working-directory: src
+        run: |
+          start=$(date +%s)
+          xcodebuild -resolvePackageDependencies -project Wikipedia.xcodeproj -scheme Wikipedia \
+            -onlyUsePackageVersionsFromResolvedFile -derivedDataPath "$RUNNER_TEMP/DerivedData" > ../resolve.log 2>&1
+          echo "packages_s=$(( $(date +%s) - start ))" >> ../times.txt
+
+      - name: Build for testing (CPU)
+        working-directory: src
+        run: |
+          start=$(date +%s)
+          xcodebuild build-for-testing -project Wikipedia.xcodeproj -scheme Wikipedia \
+            -onlyUsePackageVersionsFromResolvedFile -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            -destination "platform=iOS Simulator,name=$SIMULATOR_NAME,OS=$IOS_VERSION" \
+            > ../build.log 2>&1 || echo "build_failed=1" >> ../times.txt
+          echo "build_s=$(( $(date +%s) - start ))" >> ../times.txt
+
+      - name: Run unit tests
+        working-directory: src
+        run: |
+          start=$(date +%s)
+          xcodebuild test-without-building -project Wikipedia.xcodeproj -scheme Wikipedia \
+            -onlyUsePackageVersionsFromResolvedFile -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            -destination "platform=iOS Simulator,name=$SIMULATOR_NAME,OS=$IOS_VERSION" \
+            -resultBundlePath "$RUNNER_TEMP/Tests.xcresult" \
+            > ../test.log 2>&1 || echo "tests_failed=1" >> ../times.txt
+          echo "test_s=$(( $(date +%s) - start ))" >> ../times.txt
+          xcrun xcresulttool get test-results summary --path "$RUNNER_TEMP/Tests.xcresult" > ../tests.json 2>/dev/null || true
+
+      - name: Result
+        run: |
+          python3 - <<'PY'
+          import json, os
+          kv = lambda f: dict(l.strip().split("=", 1) for l in open(f) if "=" in l)
+          m, t = kv("machine.txt"), kv("times.txt")
+          try:
+              s = json.load(open("tests.json"))
+              tests = {k: s.get(k) for k in ("totalTestCount", "passedTests", "failedTests", "skippedTests")}
+          except Exception:
+              tests = {}
+          out = {"workload": "ios-wikipedia-unit-tests", "label": os.environ["LABEL"], "run": int(os.environ["RUN"]),
+                 "machine": m, "times": {k: float(v) for k, v in t.items()}, "tests": tests}
+          json.dump(out, open("result.json", "w"), indent=2)
+          print(json.dumps(out, indent=2))
+          PY
+        env:
+          LABEL: ${{ inputs.label }}
+          RUN: ${{ matrix.run }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result-ios-app-${{ inputs.label }}-${{ matrix.run }}
+          path: |
+            result.json
+            tests.json
+            build.log
+            test.log
+          retention-days: 30

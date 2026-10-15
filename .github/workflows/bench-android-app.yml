@@ -1,0 +1,146 @@
+# Android app workload: Thunderbird for Android at a pinned commit, with the
+# commands of its own CI ("Build - Thunderbird application" and "Quality - Unit
+# tests") and its CI Gradle settings. Every run starts cold: no Gradle cache.
+#
+# One change to the upstream settings: org.gradle.workers.max is set to the
+# number of CPUs (upstream pins 4, the size of a GitHub standard runner), and
+# the daemon heap grows to half the memory on machines with more than 20 GB.
+# On a 4 vCPU / 16 GB runner both values are the upstream ones.
+name: bench-android-app
+on:
+  workflow_dispatch:
+    inputs:
+      runs:
+        description: How many runs
+        default: "1"
+      runner:
+        description: runs-on value as JSON, for example "ubuntu-24.04" or ["my-pool-label"]
+        default: '"ubuntu-24.04"'
+      label:
+        description: Name for this runner in the results
+        default: github-ubuntu-24.04
+      task:
+        description: build (assemble the Thunderbird app) or test (all unit tests)
+        type: choice
+        options: [build, test]
+        default: build
+
+env:
+  # thunderbird/thunderbird-android main on 2026-10-15 (CI green), pinned by full commit SHA.
+  THUNDERBIRD_SHA: cf54b1fdb0eae51b2311f46f27439da00f01918b
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      runs: ${{ steps.n.outputs.runs }}
+    steps:
+      - id: n
+        run: echo "runs=$(python3 -c "import json; print(json.dumps(list(range(1, int('${{ inputs.runs }}') + 1))))")" >> "$GITHUB_OUTPUT"
+
+  gradle:
+    needs: plan
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        run: ${{ fromJSON(needs.plan.outputs.runs) }}
+    runs-on: ${{ fromJSON(inputs.runner) }}
+    timeout-minutes: 150
+    steps:
+      - name: Clone Thunderbird for Android
+        run: |
+          start=$(date +%s.%N)
+          git init --quiet src
+          git -C src fetch --quiet --depth 1 https://github.com/thunderbird/thunderbird-android.git "$THUNDERBIRD_SHA"
+          git -C src checkout --quiet --detach FETCH_HEAD
+          test "$(git -C src rev-parse HEAD)" = "$THUNDERBIRD_SHA"
+          echo "clone_s=$(echo "$(date +%s.%N) - $start" | bc)" >> times.txt
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Android SDK
+        run: |
+          # GitHub's Ubuntu image ships the SDK. Install it where an image does not.
+          if [ -z "${ANDROID_HOME:-}" ] || [ ! -d "$ANDROID_HOME" ]; then
+            start=$(date +%s.%N)
+            mkdir -p "$HOME/android-sdk/cmdline-tools"
+            curl -sSfL -o /tmp/cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
+            unzip -q /tmp/cmdline-tools.zip -d "$HOME/android-sdk/cmdline-tools"
+            mv "$HOME/android-sdk/cmdline-tools/cmdline-tools" "$HOME/android-sdk/cmdline-tools/latest"
+            yes | "$HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null
+            echo "ANDROID_HOME=$HOME/android-sdk" >> "$GITHUB_ENV"
+            echo "sdk_install_s=$(echo "$(date +%s.%N) - $start" | bc)" >> times.txt
+            echo "android_sdk=installed" >> machine.txt
+          else
+            echo "android_sdk=preinstalled" >> machine.txt
+          fi
+
+      - name: Machine and Gradle settings
+        run: |
+          cpus=$(nproc)
+          mem_gb=$(( $(sed -n 's/^MemTotal: *\([0-9]*\).*/\1/p' /proc/meminfo) / 1048576 ))
+          heap=10; [ "$mem_gb" -gt 20 ] && heap=$(( mem_gb / 2 ))
+          mkdir -p ~/.gradle
+          sed -e "s/^org.gradle.workers.max=.*/org.gradle.workers.max=$cpus/" \
+              -e "s/-Xmx10g/-Xmx${heap}g/" src/.github/ci-gradle.properties > ~/.gradle/gradle.properties
+          {
+            echo "cpus=$cpus"
+            echo "model=$(lscpu | sed -n 's/^Model name: *//p' | head -1)"
+            echo "memory_kb=$(sed -n 's/^MemTotal: *\([0-9]*\).*/\1/p' /proc/meminfo)"
+            echo "os=$(. /etc/os-release && echo "$PRETTY_NAME")"
+            echo "java=$(java -version 2>&1 | head -1)"
+            echo "gradle_workers=$cpus"
+            echo "gradle_heap_gb=$heap"
+            echo "disk_free_gb=$(df -BG --output=avail "$GITHUB_WORKSPACE" | tail -1 | tr -dc 0-9)"
+          } | tee -a machine.txt
+
+      - name: Configure (network)
+        working-directory: src
+        run: |
+          start=$(date +%s.%N)
+          ./gradlew help > ../configure.log 2>&1
+          echo "configure_s=$(echo "$(date +%s.%N) - $start" | bc)" >> ../times.txt
+
+      - name: Gradle task (CPU)
+        working-directory: src
+        env:
+          TASK: ${{ inputs.task }}
+        run: |
+          case "$TASK" in
+            build) cmd=(./gradlew :app-thunderbird:assemble -Pci=true) ;;
+            test) cmd=(./gradlew testsOnCi --parallel) ;;
+            *) echo "unknown task: $TASK" >&2; exit 1 ;;
+          esac
+          start=$(date +%s.%N)
+          "${cmd[@]}" > ../task.log 2>&1 || echo "task_failed=1" >> ../times.txt
+          echo "${TASK}_s=$(echo "$(date +%s.%N) - $start" | bc)" >> ../times.txt
+          tail -5 ../task.log
+
+      - name: Result
+        run: |
+          python3 - <<'PY'
+          import json, os
+          kv = lambda f: dict(l.strip().split("=", 1) for l in open(f) if "=" in l)
+          m, t = kv("machine.txt"), kv("times.txt")
+          out = {"workload": f"android-thunderbird-{os.environ['TASK']}", "label": os.environ["LABEL"],
+                 "run": int(os.environ["RUN"]), "machine": m, "times": {k: float(v) for k, v in t.items()}}
+          json.dump(out, open("result.json", "w"), indent=2)
+          print(json.dumps(out, indent=2))
+          PY
+        env:
+          LABEL: ${{ inputs.label }}
+          RUN: ${{ matrix.run }}
+          TASK: ${{ inputs.task }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result-android-${{ inputs.task }}-${{ inputs.label }}-${{ matrix.run }}
+          path: |
+            result.json
+            task.log
+          retention-days: 30
