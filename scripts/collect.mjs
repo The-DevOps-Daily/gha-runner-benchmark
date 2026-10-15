@@ -29,6 +29,12 @@ const PRICE_PER_MIN = {
   "buildhub-linux-large": 0.025,
   "buildhub-m4-large": 0.03,
   "buildhub-m4-xlarge": 0.06,
+  // Real app workloads. Enterprise machines (M4 Pro, Zen5) have contract
+  // prices, so their rows carry no list price.
+  "github-macos-26": 0.062,
+  "buildhub-ios-m4-large": 0.03,
+  "buildhub-ios-m4-xlarge": 0.06,
+  "buildhub-android-linux-xlarge": 0.05,
 };
 
 const gh = (...args) => execFileSync("gh", args, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
@@ -39,9 +45,15 @@ const median = (xs) => {
 
 // Results come from artifacts, so the workload name is checked before it is
 // used in a file path.
-const WORKLOADS = new Set(["linux-prometheus", "macos-xcodebenchmark"]);
+const WORKLOADS = new Set([
+  "linux-prometheus",
+  "macos-xcodebenchmark",
+  "ios-wikipedia-unit-tests",
+  "android-thunderbird-build",
+  "android-thunderbird-test",
+]);
 const byWorkload = {};
-for (const workflow of ["bench-linux.yml", "bench-macos.yml"]) {
+for (const workflow of ["bench-linux.yml", "bench-macos.yml", "bench-ios-app.yml", "bench-android-app.yml"]) {
   const runs = JSON.parse(gh("run", "list", "-R", REPO, "--workflow", workflow, "--limit", "50", "--json", "databaseId,status,conclusion"));
   for (const run of runs.filter((r) => r.status === "completed")) {
     const jobs = JSON.parse(gh("api", `repos/${REPO}/actions/runs/${run.databaseId}/jobs?per_page=100`)).jobs;
@@ -56,7 +68,7 @@ for (const workflow of ["bench-linux.yml", "bench-macos.yml"]) {
       if (!existsSync(file)) continue;
       const result = JSON.parse(readFileSync(file, "utf8"));
       if (!WORKLOADS.has(result.workload)) continue;
-      const job = jobs.find((j) => j.name === `build (${result.run})`);
+      const job = jobs.find((j) => /^(build|test|gradle) \(/.test(j.name) && j.name.endsWith(` (${result.run})`));
       const seconds = job ? (Date.parse(job.completed_at) - Date.parse(job.started_at)) / 1000 : null;
       // Time from queued to picked up by a runner. Not billed, but developers wait for it.
       const queue = job ? (Date.parse(job.started_at) - Date.parse(job.created_at)) / 1000 : null;
@@ -92,7 +104,7 @@ for (const [workload, rows] of Object.entries(byWorkload)) {
   console.log(`\n${workload}`);
   const labels = [...new Set(rows.map((r) => r.label))];
   for (const label of labels) {
-    const rs = rows.filter((r) => r.label === label && !r.times.build_failed && !r.times.tests_failed);
+    const rs = rows.filter((r) => r.label === label && !r.times.build_failed && !r.times.tests_failed && !r.times.task_failed);
     const price = PRICE_PER_MIN[label];
     const billed = median(rs.map((r) => r.billed_minutes));
     console.log(
