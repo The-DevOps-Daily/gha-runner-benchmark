@@ -79,6 +79,24 @@ jobs:
             echo "android_sdk=preinstalled" >> machine.txt
           fi
 
+      - name: Native libraries for UI tests
+        run: |
+          # Compose UI tests load Skiko, which needs OpenGL, font and X11
+          # libraries. GitHub's Ubuntu image has them; install them where an
+          # image does not, and keep the time out of the task time.
+          pkgs="libgl1 libfontconfig1 libfreetype6 libx11-6 libxext6 libxrender1 libxi6 libxtst6"
+          missing=$(for p in $pkgs; do dpkg -s "$p" > /dev/null 2>&1 || echo "$p"; done)
+          if [ -n "$missing" ]; then
+            start=$(date +%s.%N)
+            sudo=$(command -v sudo || true)
+            $sudo apt-get update -qq
+            $sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends $missing > /dev/null
+            echo "libs_install_s=$(echo "$(date +%s.%N) - $start" | bc)" >> times.txt
+            echo "native_libs=installed $(echo $missing)" >> machine.txt
+          else
+            echo "native_libs=preinstalled" >> machine.txt
+          fi
+
       - name: Machine and Gradle settings
         run: |
           cpus=$(nproc)
