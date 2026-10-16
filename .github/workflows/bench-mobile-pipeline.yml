@@ -1,0 +1,41 @@
+# One mobile pull request pipeline: the iOS build and unit tests, the Android
+# app build and the Android unit tests, started together, as a team's CI runs
+# them. The pipeline time is from the run's start to the end of its last job,
+# so it includes queueing and machine start-up on both sides.
+#
+# Each job is the same workload as bench-ios-app and bench-android-app, called
+# as a reusable workflow, so the per-job numbers stay comparable.
+name: bench-mobile-pipeline
+on:
+  workflow_dispatch:
+    inputs:
+      ios_runner:
+        description: runs-on for the iOS job, as JSON
+        default: '"macos-26"'
+      android_runner:
+        description: runs-on for both Android jobs, as JSON
+        default: '"ubuntu-24.04"'
+      label:
+        description: Name for this side in the results
+        default: github
+
+jobs:
+  ios:
+    uses: ./.github/workflows/bench-ios-app.yml
+    with:
+      runner: ${{ inputs.ios_runner }}
+      label: pipeline-${{ inputs.label }}-ios
+
+  android-build:
+    uses: ./.github/workflows/bench-android-app.yml
+    with:
+      runner: ${{ inputs.android_runner }}
+      label: pipeline-${{ inputs.label }}-android
+      task: build
+
+  android-test:
+    uses: ./.github/workflows/bench-android-app.yml
+    with:
+      runner: ${{ inputs.android_runner }}
+      label: pipeline-${{ inputs.label }}-android
+      task: test

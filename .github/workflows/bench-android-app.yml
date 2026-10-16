@@ -24,6 +24,13 @@ on:
         type: choice
         options: [build, test]
         default: build
+  # Called by bench-mobile-pipeline.yml.
+  workflow_call:
+    inputs:
+      runs: { type: string, default: "1" }
+      runner: { type: string, default: '"ubuntu-24.04"' }
+      label: { type: string, default: github-ubuntu-24.04 }
+      task: { type: string, default: build }
 
 env:
   # thunderbird/thunderbird-android main on 2026-10-15 (CI green), pinned by full commit SHA.

@@ -15,6 +15,13 @@ on:
       label:
         description: Name for this runner in the results
         default: github-macos-26
+  # Called by bench-mobile-pipeline.yml, which runs the iOS and Android jobs of
+  # one pull request side by side.
+  workflow_call:
+    inputs:
+      runs: { type: string, default: "1" }
+      runner: { type: string, default: '"macos-26"' }
+      label: { type: string, default: github-macos-26 }
 
 env:
   # wikimedia/wikipedia-ios main on 2026-10-15, pinned by full commit SHA.
