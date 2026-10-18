@@ -1,6 +1,29 @@
 [
   {
     "workload": "linux-prometheus",
+    "label": "buildhub-linux-medium",
+    "run": 1,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "16371708",
+      "os": "Ubuntu 24.04.4 LTS"
+    },
+    "times": {
+      "clone_s": 1.225862393,
+      "modules_s": 35.763394074,
+      "build_s": 187.741975521,
+      "test_s": 88.989005021
+    },
+    "github_run": 38755740137,
+    "job_seconds": 327,
+    "queue_seconds": 35,
+    "started_at": "2026-10-15T14:56:11Z",
+    "billed_minutes": 6,
+    "runner_name": "vm-pool-g2-linux-amd-zen4-4c-16g-c9c1120-226dfee5-651a"
+  },
+  {
+    "workload": "linux-prometheus",
     "label": "github-ubuntu-24.04",
     "run": 1,
     "machine": {
@@ -412,5 +435,189 @@
     "started_at": "2026-10-14T09:33:13Z",
     "billed_minutes": 6,
     "runner_name": "GitHub Actions 1000013084"
+  },
+  {
+    "workload": "linux-prometheus",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373440",
+      "os": "Ubuntu 24.04.5 LTS"
+    },
+    "times": {
+      "clone_s": 1.6418454,
+      "modules_s": 23.953684591,
+      "build_s": 192.751615339,
+      "test_s": 89.136771067
+    },
+    "github_run": 38630176231,
+    "job_seconds": 324,
+    "queue_seconds": 4,
+    "started_at": "2026-10-14T20:13:14Z",
+    "billed_minutes": 6,
+    "runner_name": "GitHub Actions 1000013095"
+  },
+  {
+    "workload": "linux-prometheus",
+    "label": "github-ubuntu-24.04",
+    "run": 2,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS"
+    },
+    "times": {
+      "clone_s": 1.734449201,
+      "modules_s": 27.671474213,
+      "build_s": 196.520945076,
+      "test_s": 91.102996929
+    },
+    "github_run": 38630176231,
+    "job_seconds": 334,
+    "queue_seconds": 3,
+    "started_at": "2026-10-14T20:13:13Z",
+    "billed_minutes": 6,
+    "runner_name": "GitHub Actions 1000013094"
+  },
+  {
+    "workload": "linux-prometheus",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS"
+    },
+    "times": {
+      "clone_s": 1.526051462,
+      "modules_s": 23.450103797,
+      "build_s": 195.623910294,
+      "test_s": 90.251314511
+    },
+    "github_run": 38711034221,
+    "job_seconds": 328,
+    "queue_seconds": 3,
+    "started_at": "2026-10-15T09:10:59Z",
+    "billed_minutes": 6,
+    "runner_name": "GitHub Actions 1000013111"
+  },
+  {
+    "workload": "linux-prometheus",
+    "label": "github-ubuntu-24.04",
+    "run": 2,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS"
+    },
+    "times": {
+      "clone_s": 1.976168983,
+      "modules_s": 21.68119318,
+      "build_s": 202.152749006,
+      "test_s": 92.357288678
+    },
+    "github_run": 38711034221,
+    "job_seconds": 332,
+    "queue_seconds": 2,
+    "started_at": "2026-10-15T09:10:58Z",
+    "billed_minutes": 6,
+    "runner_name": "GitHub Actions 1000013110"
+  },
+  {
+    "workload": "linux-prometheus",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS"
+    },
+    "times": {
+      "clone_s": 1.606714764,
+      "modules_s": 29.419342403,
+      "build_s": 197.808579212,
+      "test_s": 90.709784642
+    },
+    "github_run": 38797635636,
+    "job_seconds": 335,
+    "queue_seconds": 3,
+    "started_at": "2026-10-15T19:54:26Z",
+    "billed_minutes": 6,
+    "runner_name": "GitHub Actions 1000013138"
+  },
+  {
+    "workload": "linux-prometheus",
+    "label": "github-ubuntu-24.04",
+    "run": 2,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373448",
+      "os": "Ubuntu 24.04.5 LTS"
+    },
+    "times": {
+      "clone_s": 1.182614469,
+      "modules_s": 24.30861129,
+      "build_s": 192.302805307,
+      "test_s": 88.19538751
+    },
+    "github_run": 38797635636,
+    "job_seconds": 320,
+    "queue_seconds": 2,
+    "started_at": "2026-10-15T19:54:25Z",
+    "billed_minutes": 6,
+    "runner_name": "GitHub Actions 1000013137"
+  },
+  {
+    "workload": "linux-prometheus",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS"
+    },
+    "times": {
+      "clone_s": 1.194017277,
+      "modules_s": 23.469213903,
+      "build_s": 194.906904404,
+      "test_s": 90.21371216
+    },
+    "github_run": 38877824296,
+    "job_seconds": 323,
+    "queue_seconds": 3,
+    "started_at": "2026-10-16T09:03:33Z",
+    "billed_minutes": 6,
+    "runner_name": "GitHub Actions 1000013143"
+  },
+  {
+    "workload": "linux-prometheus",
+    "label": "github-ubuntu-24.04",
+    "run": 2,
+    "machine": {
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS"
+    },
+    "times": {
+      "clone_s": 1.204427776,
+      "modules_s": 18.835207268,
+      "build_s": 195.420671321,
+      "test_s": 89.004304099
+    },
+    "github_run": 38877824296,
+    "job_seconds": 318,
+    "queue_seconds": 3,
+    "started_at": "2026-10-16T09:03:33Z",
+    "billed_minutes": 6,
+    "runner_name": "GitHub Actions 1000013144"
   }
 ]

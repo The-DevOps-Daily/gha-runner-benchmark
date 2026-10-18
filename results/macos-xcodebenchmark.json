@@ -1,6 +1,50 @@
 [
   {
     "workload": "macos-xcodebenchmark",
+    "label": "buildhub-m4-large",
+    "run": 1,
+    "machine": {
+      "cpus": "5",
+      "model": "Apple M4 (Virtual)",
+      "memory_bytes": "15032385536",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 7,
+      "build_s": 280
+    },
+    "github_run": 38755754885,
+    "job_seconds": 300,
+    "queue_seconds": 37,
+    "started_at": "2026-10-15T14:56:19Z",
+    "billed_minutes": 5,
+    "runner_name": "vm-pool-g2-mac-m4-5c-14g-0eb9869-ca787775-3a0b"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "buildhub-m4-xlarge",
+    "run": 1,
+    "machine": {
+      "cpus": "10",
+      "model": "Apple M4 (Virtual)",
+      "memory_bytes": "30064771072",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 7,
+      "build_s": 211
+    },
+    "github_run": 38755768234,
+    "job_seconds": 230,
+    "queue_seconds": 34,
+    "started_at": "2026-10-15T14:56:21Z",
+    "billed_minutes": 4,
+    "runner_name": "vm-pool-g2-mac-m4-10c-28g-148508c-72130322-bf7d"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
     "label": "github-macos-15",
     "run": 1,
     "machine": {
@@ -416,5 +460,181 @@
     "started_at": "2026-10-14T09:31:09Z",
     "billed_minutes": 14,
     "runner_name": "GitHub Actions 1000013078"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "github-macos-15",
+    "run": 1,
+    "machine": {
+      "cpus": "3",
+      "model": "Apple M1 (Virtual)",
+      "memory_bytes": "7516192768",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 13,
+      "build_s": 904
+    },
+    "github_run": 38630044086,
+    "job_seconds": 934,
+    "queue_seconds": 9,
+    "started_at": "2026-10-14T20:12:25Z",
+    "billed_minutes": 16,
+    "runner_name": "GitHub Actions 1000013092"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "github-macos-15",
+    "run": 2,
+    "machine": {
+      "cpus": "3",
+      "model": "Apple M1 (Virtual)",
+      "memory_bytes": "7516192768",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 13,
+      "build_s": 831
+    },
+    "github_run": 38630044086,
+    "job_seconds": 859,
+    "queue_seconds": 7,
+    "started_at": "2026-10-14T20:12:23Z",
+    "billed_minutes": 15,
+    "runner_name": "GitHub Actions 1000013091"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "github-macos-15",
+    "run": 1,
+    "machine": {
+      "cpus": "3",
+      "model": "Apple M1 (Virtual)",
+      "memory_bytes": "7516192768",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 10,
+      "build_s": 954
+    },
+    "github_run": 38710802689,
+    "job_seconds": 982,
+    "queue_seconds": 9,
+    "started_at": "2026-10-15T09:09:15Z",
+    "billed_minutes": 17,
+    "runner_name": "GitHub Actions 1000013108"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "github-macos-15",
+    "run": 2,
+    "machine": {
+      "cpus": "3",
+      "model": "Apple M1 (Virtual)",
+      "memory_bytes": "7516192768",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 12,
+      "build_s": 1005
+    },
+    "github_run": 38710802689,
+    "job_seconds": 1036,
+    "queue_seconds": 7,
+    "started_at": "2026-10-15T09:09:13Z",
+    "billed_minutes": 18,
+    "runner_name": "GitHub Actions 1000013107"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "github-macos-15",
+    "run": 1,
+    "machine": {
+      "cpus": "3",
+      "model": "Apple M1 (Virtual)",
+      "memory_bytes": "7516192768",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 13,
+      "build_s": 1041
+    },
+    "github_run": 38797512656,
+    "job_seconds": 1071,
+    "queue_seconds": 8,
+    "started_at": "2026-10-15T19:53:37Z",
+    "billed_minutes": 18,
+    "runner_name": "GitHub Actions 1000013134"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "github-macos-15",
+    "run": 2,
+    "machine": {
+      "cpus": "3",
+      "model": "Apple M1 (Virtual)",
+      "memory_bytes": "7516192768",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 12,
+      "build_s": 892
+    },
+    "github_run": 38797512656,
+    "job_seconds": 920,
+    "queue_seconds": 9,
+    "started_at": "2026-10-15T19:53:38Z",
+    "billed_minutes": 16,
+    "runner_name": "GitHub Actions 1000013135"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "github-macos-15",
+    "run": 1,
+    "machine": {
+      "cpus": "3",
+      "model": "Apple M1 (Virtual)",
+      "memory_bytes": "7516192768",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 20,
+      "build_s": 880
+    },
+    "github_run": 38877634372,
+    "job_seconds": 917,
+    "queue_seconds": 7,
+    "started_at": "2026-10-16T09:01:55Z",
+    "billed_minutes": 16,
+    "runner_name": "GitHub Actions 1000013141"
+  },
+  {
+    "workload": "macos-xcodebenchmark",
+    "label": "github-macos-15",
+    "run": 2,
+    "machine": {
+      "cpus": "3",
+      "model": "Apple M1 (Virtual)",
+      "memory_bytes": "7516192768",
+      "os": "macOS 15.7.9",
+      "xcode": "Xcode 16.4"
+    },
+    "times": {
+      "clone_s": 14,
+      "build_s": 927
+    },
+    "github_run": 38877634372,
+    "job_seconds": 962,
+    "queue_seconds": 9,
+    "started_at": "2026-10-16T09:01:57Z",
+    "billed_minutes": 17,
+    "runner_name": "GitHub Actions 1000013140"
   }
 ]

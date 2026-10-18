@@ -1,0 +1,433 @@
+[
+  {
+    "workload": "android-thunderbird-test",
+    "label": "buildhub-android-linux-xlarge",
+    "run": 1,
+    "machine": {
+      "android_sdk": "installed",
+      "native_libs": "installed libgl1 libxrender1 libxi6 libxtst6",
+      "cpus": "16",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "65838992",
+      "os": "Ubuntu 24.04.4 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "16",
+      "gradle_heap_gb": "31",
+      "disk_free_gb": "161"
+    },
+    "times": {
+      "clone_s": 2.372311512,
+      "sdk_install_s": 3.005529862,
+      "libs_install_s": 12.572845303,
+      "configure_s": 115.276523172,
+      "test_s": 322.331001992
+    },
+    "github_run": 38888980376,
+    "job_seconds": 466,
+    "queue_seconds": 1620,
+    "started_at": "2026-10-16T11:09:27Z",
+    "billed_minutes": 8,
+    "runner_name": "vm-pool-g2-linux-amd-zen4-16c-64g-631b99f-4c545630-f91d"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "buildhub-android-linux-xlarge",
+    "run": 1,
+    "machine": {
+      "android_sdk": "installed",
+      "native_libs": "installed libgl1 libxrender1 libxi6 libxtst6",
+      "cpus": "16",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "65838992",
+      "os": "Ubuntu 24.04.4 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "16",
+      "gradle_heap_gb": "31",
+      "disk_free_gb": "161"
+    },
+    "times": {
+      "clone_s": 2.717455816,
+      "sdk_install_s": 3.796076417,
+      "libs_install_s": 10.83346291,
+      "configure_s": 120.277699623,
+      "test_s": 346.273178977
+    },
+    "github_run": 38897007118,
+    "job_seconds": 493,
+    "queue_seconds": 1453,
+    "started_at": "2026-10-16T12:19:52Z",
+    "billed_minutes": 9,
+    "runner_name": "vm-pool-g2-linux-amd-zen4-16c-64g-0be66ef-4c545630-f91d"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "buildhub-android-linux-xlarge",
+    "run": 1,
+    "machine": {
+      "android_sdk": "installed",
+      "native_libs": "installed libgl1 libxrender1 libxi6 libxtst6",
+      "cpus": "16",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "65838996",
+      "os": "Ubuntu 24.04.4 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "16",
+      "gradle_heap_gb": "31",
+      "disk_free_gb": "161"
+    },
+    "times": {
+      "clone_s": 2.502710356,
+      "sdk_install_s": 3.799659331,
+      "libs_install_s": 11.330747899,
+      "configure_s": 128.832614703,
+      "test_s": 336.122408064
+    },
+    "github_run": 38897108155,
+    "job_seconds": 492,
+    "queue_seconds": 3572,
+    "started_at": "2026-10-16T12:56:04Z",
+    "billed_minutes": 9,
+    "runner_name": "vm-pool-g2-linux-amd-zen4-16c-64g-de179aa-4c545630-f91d"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "buildhub-android-zen5-32",
+    "run": 1,
+    "machine": {
+      "android_sdk": "installed",
+      "native_libs": "installed libgl1 libxrender1 libxi6 libxtst6",
+      "cpus": "32",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "131893680",
+      "os": "Ubuntu 24.04.4 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "32",
+      "gradle_heap_gb": "62",
+      "disk_free_gb": "161"
+    },
+    "times": {
+      "clone_s": 2.787325085,
+      "sdk_install_s": 2.229010293,
+      "libs_install_s": 9.297989486,
+      "configure_s": 116.769548357,
+      "test_s": 283.712324181
+    },
+    "github_run": 38889000227,
+    "job_seconds": 426,
+    "queue_seconds": 3781,
+    "started_at": "2026-10-16T11:45:40Z",
+    "billed_minutes": 8,
+    "runner_name": "vm-pool-g2-linux-amd-zen5-32c-128g-83ac40e-5075d10f-4826"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "buildhub-android-zen5-32",
+    "run": 1,
+    "machine": {
+      "android_sdk": "installed",
+      "native_libs": "installed libgl1 libxrender1 libxi6 libxtst6",
+      "cpus": "32",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "131893680",
+      "os": "Ubuntu 24.04.4 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "32",
+      "gradle_heap_gb": "62",
+      "disk_free_gb": "161"
+    },
+    "times": {
+      "clone_s": 2.792786722,
+      "sdk_install_s": 2.438386987,
+      "libs_install_s": 9.554812716,
+      "configure_s": 137.797530612,
+      "test_s": 380.981604893
+    },
+    "github_run": 38897017717,
+    "job_seconds": 545,
+    "queue_seconds": 3800,
+    "started_at": "2026-10-16T12:59:03Z",
+    "billed_minutes": 10,
+    "runner_name": "vm-pool-g2-linux-amd-zen5-32c-128g-d67890e-5075d10f-4826"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "buildhub-android-zen5-32",
+    "run": 1,
+    "machine": {
+      "android_sdk": "installed",
+      "native_libs": "installed libgl1 libxrender1 libxi6 libxtst6",
+      "cpus": "32",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "131893672",
+      "os": "Ubuntu 24.04.4 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "32",
+      "gradle_heap_gb": "62",
+      "disk_free_gb": "161"
+    },
+    "times": {
+      "clone_s": 2.827687171,
+      "sdk_install_s": 2.299474343,
+      "libs_install_s": 9.269209407,
+      "configure_s": 115.299030898,
+      "test_s": 229.13380818
+    },
+    "github_run": 38897117931,
+    "job_seconds": 369,
+    "queue_seconds": 8130,
+    "started_at": "2026-10-16T14:12:08Z",
+    "billed_minutes": 7,
+    "runner_name": "vm-pool-g2-linux-amd-zen5-32c-128g-2eea56f-5075d10f-4826"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "buildhub-linux-medium",
+    "run": 1,
+    "machine": {
+      "android_sdk": "installed",
+      "cpus": "4",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "16371716",
+      "os": "Ubuntu 24.04.4 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "161"
+    },
+    "times": {
+      "clone_s": 2.424481736,
+      "sdk_install_s": 3.641859011,
+      "configure_s": 152.576989131,
+      "task_failed": 1,
+      "test_s": 462.775996085
+    },
+    "github_run": 38879503215,
+    "job_seconds": 630,
+    "queue_seconds": 2769,
+    "started_at": "2026-10-16T10:04:19Z",
+    "billed_minutes": 11,
+    "runner_name": "vm-pool-g2-linux-amd-zen4-4c-16g-5a00de7-226dfee5-651a"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "buildhub-linux-medium",
+    "run": 1,
+    "machine": {
+      "android_sdk": "installed",
+      "native_libs": "installed libgl1 libxrender1 libxi6 libxtst6",
+      "cpus": "4",
+      "model": "AMD EPYC-Genoa Processor",
+      "memory_kb": "16371704",
+      "os": "Ubuntu 24.04.4 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "161"
+    },
+    "times": {
+      "clone_s": 2.38733038,
+      "sdk_install_s": 3.383924134,
+      "libs_install_s": 11.801050295,
+      "configure_s": 152.109896822,
+      "test_s": 818.623095557
+    },
+    "github_run": 38886349870,
+    "job_seconds": 996,
+    "queue_seconds": 34,
+    "started_at": "2026-10-16T10:19:08Z",
+    "billed_minutes": 17,
+    "runner_name": "vm-pool-g2-linux-amd-zen4-4c-16g-2d8a7bb-226dfee5-651a"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "android_sdk": "preinstalled",
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16377728",
+      "os": "Ubuntu 24.04.5 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "86"
+    },
+    "times": {
+      "clone_s": 2.323060663,
+      "configure_s": 212.230889266,
+      "test_s": 739.271519721
+    },
+    "github_run": 38757725776,
+    "job_seconds": 960,
+    "queue_seconds": 3,
+    "started_at": "2026-10-15T15:09:00Z",
+    "billed_minutes": 16,
+    "runner_name": "GitHub Actions 1000013120"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "android_sdk": "preinstalled",
+      "cpus": "4",
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "86"
+    },
+    "times": {
+      "clone_s": 2.859808918,
+      "configure_s": 265.238561804,
+      "test_s": 862.517995964
+    },
+    "github_run": 38760607718,
+    "job_seconds": 1138,
+    "queue_seconds": 3,
+    "started_at": "2026-10-15T15:28:30Z",
+    "billed_minutes": 19,
+    "runner_name": "GitHub Actions 1000013125"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "github-ubuntu-24.04",
+    "run": 2,
+    "machine": {
+      "android_sdk": "preinstalled",
+      "cpus": "4",
+      "model": "AMD EPYC 9V45 96-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "85"
+    },
+    "times": {
+      "clone_s": 2.779539018,
+      "configure_s": 164.854240485,
+      "test_s": 529.323138077
+    },
+    "github_run": 38760607718,
+    "job_seconds": 702,
+    "queue_seconds": 3,
+    "started_at": "2026-10-15T15:28:30Z",
+    "billed_minutes": 12,
+    "runner_name": "GitHub Actions 1000013126"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "android_sdk": "preinstalled",
+      "cpus": "4",
+      "model": "AMD EPYC 9V74 80-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "86"
+    },
+    "times": {
+      "clone_s": 3.369635104,
+      "configure_s": 212.061921486,
+      "test_s": 866.619527551
+    },
+    "github_run": 38879492909,
+    "job_seconds": 1091,
+    "queue_seconds": 3,
+    "started_at": "2026-10-16T09:18:09Z",
+    "billed_minutes": 19,
+    "runner_name": "GitHub Actions 1000013150"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "android_sdk": "preinstalled",
+      "native_libs": "preinstalled",
+      "cpus": "4",
+      "model": "Intel(R) Xeon(R) 6973P-C",
+      "memory_kb": "16372440",
+      "os": "Ubuntu 24.04.5 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "86"
+    },
+    "times": {
+      "clone_s": 2.470004789,
+      "configure_s": 175.50126043,
+      "test_s": 629.530732486
+    },
+    "github_run": 38886359954,
+    "job_seconds": 814,
+    "queue_seconds": 3,
+    "started_at": "2026-10-16T10:18:42Z",
+    "billed_minutes": 14,
+    "runner_name": "GitHub Actions 1000013156"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "android_sdk": "preinstalled",
+      "native_libs": "preinstalled",
+      "cpus": "4",
+      "model": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+      "memory_kb": "16372432",
+      "os": "Ubuntu 24.04.5 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "86"
+    },
+    "times": {
+      "clone_s": 2.91600755,
+      "configure_s": 204.267789252,
+      "test_s": 753.247152684
+    },
+    "github_run": 38896997491,
+    "job_seconds": 971,
+    "queue_seconds": 2,
+    "started_at": "2026-10-16T11:55:35Z",
+    "billed_minutes": 17,
+    "runner_name": "GitHub Actions 1000013173"
+  },
+  {
+    "workload": "android-thunderbird-test",
+    "label": "github-ubuntu-24.04",
+    "run": 1,
+    "machine": {
+      "android_sdk": "preinstalled",
+      "native_libs": "preinstalled",
+      "cpus": "4",
+      "model": "AMD EPYC 9V45 96-Core Processor",
+      "memory_kb": "16373452",
+      "os": "Ubuntu 24.04.5 LTS",
+      "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+      "gradle_workers": "4",
+      "gradle_heap_gb": "10",
+      "disk_free_gb": "86"
+    },
+    "times": {
+      "clone_s": 2.936537737,
+      "configure_s": 152.220076985,
+      "test_s": 601.126767566
+    },
+    "github_run": 38897096258,
+    "job_seconds": 762,
+    "queue_seconds": 2,
+    "started_at": "2026-10-16T11:56:31Z",
+    "billed_minutes": 13,
+    "runner_name": "GitHub Actions 1000013187"
+  }
+]
