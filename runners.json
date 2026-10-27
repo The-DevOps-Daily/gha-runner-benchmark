@@ -1,0 +1,22 @@
+[
+  {"workflow": "bench-linux.yml", "label": "github-ubuntu-24.04", "runner": "\"ubuntu-24.04\"", "side": "github"},
+  {"workflow": "bench-linux.yml", "label": "buildhub-linux-medium", "runner": "[\"bitrise-runner-bench-linux-medium\"]", "side": "buildhub"},
+  {"workflow": "bench-macos.yml", "label": "github-macos-15", "runner": "\"macos-15\"", "side": "github"},
+  {"workflow": "bench-macos.yml", "label": "buildhub-m4-large", "runner": "[\"bitrise-runner-bench-m4-large\"]", "side": "buildhub"},
+  {"workflow": "bench-macos.yml", "label": "buildhub-m4-xlarge", "runner": "[\"bitrise-runner-bench-m4-xlarge\"]", "side": "buildhub"},
+  {"workflow": "bench-macos.yml", "label": "github-macos-15-xlarge", "runner": "\"macos-15-xlarge\"", "side": "github", "paid": true},
+  {"workflow": "bench-linux.yml", "label": "github-linux-8-core", "runner": "\"ubuntu-24.04-8core\"", "side": "github", "paid": true},
+  {"workflow": "bench-linux.yml", "label": "buildhub-linux-large", "runner": "[\"bitrise-runner-bench-linux-large\"]", "side": "buildhub"},
+  {"workflow": "bench-android-app.yml", "task": "build", "label": "github-ubuntu-24.04", "runner": "\"ubuntu-24.04\"", "side": "github"},
+  {"workflow": "bench-android-app.yml", "task": "build", "label": "buildhub-linux-medium", "runner": "[\"bitrise-runner-bench-linux-medium\"]", "side": "buildhub"},
+  {"workflow": "bench-android-app.yml", "task": "build", "label": "buildhub-android-linux-xlarge", "runner": "[\"bitrise-runner-android-linux-xlarge\"]", "side": "buildhub"},
+  {"workflow": "bench-android-app.yml", "task": "build", "label": "buildhub-android-zen5-32", "runner": "[\"bitrise-runner-android-zen5-32\"]", "side": "buildhub"},
+  {"workflow": "bench-android-app.yml", "task": "test", "label": "github-ubuntu-24.04", "runner": "\"ubuntu-24.04\"", "side": "github"},
+  {"workflow": "bench-android-app.yml", "task": "test", "label": "buildhub-linux-medium", "runner": "[\"bitrise-runner-bench-linux-medium\"]", "side": "buildhub"},
+  {"workflow": "bench-android-app.yml", "task": "test", "label": "buildhub-android-linux-xlarge", "runner": "[\"bitrise-runner-android-linux-xlarge\"]", "side": "buildhub"},
+  {"workflow": "bench-android-app.yml", "task": "test", "label": "buildhub-android-zen5-32", "runner": "[\"bitrise-runner-android-zen5-32\"]", "side": "buildhub"},
+  {"workflow": "bench-ios-app.yml", "label": "github-macos-26", "runner": "\"macos-26\"", "side": "github"},
+  {"workflow": "bench-ios-app.yml", "label": "buildhub-ios-m4-large", "runner": "[\"bitrise-runner-ios-m4-large\"]", "side": "buildhub"},
+  {"workflow": "bench-ios-app.yml", "label": "buildhub-ios-m4-xlarge", "runner": "[\"bitrise-runner-ios-m4-xlarge\"]", "side": "buildhub"},
+  {"workflow": "bench-ios-app.yml", "label": "buildhub-ios-m4pro-xlarge", "runner": "[\"bitrise-runner-ios-m4pro-xlarge\"]", "side": "buildhub"}
+]

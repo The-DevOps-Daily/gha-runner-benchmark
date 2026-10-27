@@ -1,0 +1,1022 @@
+[
+  {
+    "github_run": 38925105348,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-16T15:34:55Z",
+    "pipeline_seconds": 2782,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-e96c8ce-5ba659ee-ca1c",
+        "queue_seconds": 46,
+        "job_seconds": 380,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-0f272a9-4c545630-f91d",
+        "queue_seconds": 35,
+        "job_seconds": 2179,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-dd4fadb-4c545630-f91d",
+        "queue_seconds": 2252,
+        "job_seconds": 522,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38932302562,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-16T16:29:06Z",
+    "pipeline_seconds": 2053,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-22f61e3-4c545630-f91d",
+        "queue_seconds": 34,
+        "job_seconds": 499,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-e1ee3d1-5ba659ee-ca1c",
+        "queue_seconds": 38,
+        "job_seconds": 316,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-62dd24e-4c545630-f91d",
+        "queue_seconds": 567,
+        "job_seconds": 1477,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38937039337,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-16T17:05:48Z",
+    "pipeline_seconds": 1811,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-d2f1fe1-5ba659ee-ca1c",
+        "queue_seconds": 39,
+        "job_seconds": 346,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-d631947-4c545630-f91d",
+        "queue_seconds": 34,
+        "job_seconds": 519,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-d8b2188-4c545630-f91d",
+        "queue_seconds": 593,
+        "job_seconds": 1209,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38948397533,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-16T18:34:35Z",
+    "pipeline_seconds": 1642,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-cd696d4-4c545630-f91d",
+        "queue_seconds": 34,
+        "job_seconds": 1110,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-e846a06-4c545630-f91d",
+        "queue_seconds": 1178,
+        "job_seconds": 457,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-cb8ff1c-5ba659ee-ca1c",
+        "queue_seconds": 38,
+        "job_seconds": 335,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38968064155,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-16T21:15:13Z",
+    "pipeline_seconds": 1574,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-ac9cdb0-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 493,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-0948194-5ba659ee-ca1c",
+        "queue_seconds": 40,
+        "job_seconds": 341,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-e4b4710-4c545630-f91d",
+        "queue_seconds": 560,
+        "job_seconds": 1006,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38985499835,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T00:15:12Z",
+    "pipeline_seconds": 2459,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-6bf3ce2-4c545630-f91d",
+        "queue_seconds": 35,
+        "job_seconds": 1791,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-9231895-5ba659ee-ca1c",
+        "queue_seconds": 45,
+        "job_seconds": 397,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-83992fb-4c545630-f91d",
+        "queue_seconds": 1864,
+        "job_seconds": 587,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38998066900,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T03:15:11Z",
+    "pipeline_seconds": 3128,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-0868382-5ba659ee-ca1c",
+        "queue_seconds": 35,
+        "job_seconds": 318,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-948c0ea-4c545630-f91d",
+        "queue_seconds": 32,
+        "job_seconds": 2581,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-a7d7d99-4c545630-f91d",
+        "queue_seconds": 2646,
+        "job_seconds": 473,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39009217526,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T06:15:13Z",
+    "pipeline_seconds": 1684,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-ce0e4d0-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 1186,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-fd4dbf6-4c545630-f91d",
+        "queue_seconds": 1253,
+        "job_seconds": 424,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-19eed88-5ba659ee-ca1c",
+        "queue_seconds": 39,
+        "job_seconds": 334,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39020415005,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T09:15:13Z",
+    "pipeline_seconds": 2331,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-91355fb-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 406,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-b0a8a86-5ba659ee-ca1c",
+        "queue_seconds": 36,
+        "job_seconds": 323,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-8433fff-4c545630-f91d",
+        "queue_seconds": 472,
+        "job_seconds": 1851,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39031790060,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T12:15:12Z",
+    "pipeline_seconds": 2182,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-686c8ce-4c545630-f91d",
+        "queue_seconds": 34,
+        "job_seconds": 400,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-663e702-5ba659ee-ca1c",
+        "queue_seconds": 38,
+        "job_seconds": 338,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-fdd0b49-4c545630-f91d",
+        "queue_seconds": 467,
+        "job_seconds": 1707,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39046371336,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T15:44:30Z",
+    "pipeline_seconds": 1081,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-77bd5a7-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 1042,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-bce76ce-5ba659ee-ca1c",
+        "queue_seconds": 41,
+        "job_seconds": 388,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-c6c6578-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 434,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39050207216,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T16:37:18Z",
+    "pipeline_seconds": 1109,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-31ee0ae-5ba659ee-ca1c",
+        "queue_seconds": 37,
+        "job_seconds": 322,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-d4da92a-4c545630-f91d",
+        "queue_seconds": 32,
+        "job_seconds": 1070,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-734cc3e-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 427,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39053823664,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T17:27:17Z",
+    "pipeline_seconds": 1284,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-be29c00-4c545630-f91d",
+        "queue_seconds": 34,
+        "job_seconds": 1244,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-4e0c931-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 445,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-8dac17c-5ba659ee-ca1c",
+        "queue_seconds": 46,
+        "job_seconds": 471,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39058003273,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T18:25:12Z",
+    "pipeline_seconds": 1765,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-33c0ebc-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 452,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-cd40d91-4c545630-f91d",
+        "queue_seconds": 34,
+        "job_seconds": 1723,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-b57d7c6-5ba659ee-ca1c",
+        "queue_seconds": 37,
+        "job_seconds": 318,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39062381786,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T19:25:12Z",
+    "pipeline_seconds": 1023,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-ce5ff7b-4c545630-f91d",
+        "queue_seconds": 32,
+        "job_seconds": 467,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-ad9140a-5ba659ee-ca1c",
+        "queue_seconds": 47,
+        "job_seconds": 391,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-60647d0-4c545630-f91d",
+        "queue_seconds": 32,
+        "job_seconds": 983,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39066627127,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T20:25:12Z",
+    "pipeline_seconds": 1022,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-fbb2d6d-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 981,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-0124789-4c545630-f91d",
+        "queue_seconds": 34,
+        "job_seconds": 492,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-a7e5f61-5ba659ee-ca1c",
+        "queue_seconds": 38,
+        "job_seconds": 337,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39070860724,
+    "side": "buildhub",
+    "conclusion": "success",
+    "created_at": "2026-10-17T21:25:13Z",
+    "pipeline_seconds": 1552,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-cfc997f-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 1512,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "vm-pool-g2-linux-amd-zen4-16c-64g-9d72b39-4c545630-f91d",
+        "queue_seconds": 33,
+        "job_seconds": 474,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "vm-pool-g2-mac-m4-5c-14g-8d780b6-5ba659ee-ca1c",
+        "queue_seconds": 37,
+        "job_seconds": 314,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38923727322,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-16T15:24:50Z",
+    "pipeline_seconds": 3171,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013196",
+        "queue_seconds": 9,
+        "job_seconds": 1130,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013197",
+        "queue_seconds": 3,
+        "job_seconds": 710,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013198",
+        "queue_seconds": 4,
+        "job_seconds": 3160,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38932285034,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-16T16:28:58Z",
+    "pipeline_seconds": 2523,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013207",
+        "queue_seconds": 8,
+        "job_seconds": 921,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013208",
+        "queue_seconds": 3,
+        "job_seconds": 782,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013209",
+        "queue_seconds": 2,
+        "job_seconds": 2511,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38938104196,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-16T17:14:03Z",
+    "pipeline_seconds": 3347,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013223",
+        "queue_seconds": 3,
+        "job_seconds": 1186,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013225",
+        "queue_seconds": 9,
+        "job_seconds": 1075,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013224",
+        "queue_seconds": 3,
+        "job_seconds": 3335,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38948381400,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-16T18:34:27Z",
+    "pipeline_seconds": 2532,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013237",
+        "queue_seconds": 2,
+        "job_seconds": 2521,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013241",
+        "queue_seconds": 9,
+        "job_seconds": 1173,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013242",
+        "queue_seconds": 4,
+        "job_seconds": 1169,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38968048449,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-16T21:15:06Z",
+    "pipeline_seconds": 2862,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013254",
+        "queue_seconds": 2,
+        "job_seconds": 2853,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013255",
+        "queue_seconds": 9,
+        "job_seconds": 1010,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013256",
+        "queue_seconds": 3,
+        "job_seconds": 1070,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38985488530,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T00:15:05Z",
+    "pipeline_seconds": 2613,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013263",
+        "queue_seconds": 7,
+        "job_seconds": 872,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013264",
+        "queue_seconds": 4,
+        "job_seconds": 824,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013265",
+        "queue_seconds": 2,
+        "job_seconds": 2604,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 38998058004,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T03:15:04Z",
+    "pipeline_seconds": 1969,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013272",
+        "queue_seconds": 7,
+        "job_seconds": 770,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013273",
+        "queue_seconds": 2,
+        "job_seconds": 1010,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013277",
+        "queue_seconds": 3,
+        "job_seconds": 1956,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39009208353,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T06:15:05Z",
+    "pipeline_seconds": 3648,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013281",
+        "queue_seconds": 3,
+        "job_seconds": 3638,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013282",
+        "queue_seconds": 8,
+        "job_seconds": 760,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013283",
+        "queue_seconds": 3,
+        "job_seconds": 978,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39020405796,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T09:15:05Z",
+    "pipeline_seconds": 2472,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013298",
+        "queue_seconds": 2,
+        "job_seconds": 787,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013299",
+        "queue_seconds": 7,
+        "job_seconds": 922,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013300",
+        "queue_seconds": 2,
+        "job_seconds": 2461,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39031780996,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T12:15:05Z",
+    "pipeline_seconds": 2404,
+    "jobs": [
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013339",
+        "queue_seconds": 3,
+        "job_seconds": 942,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013338",
+        "queue_seconds": 3,
+        "job_seconds": 2394,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013340",
+        "queue_seconds": 10,
+        "job_seconds": 682,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39046363070,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T15:44:23Z",
+    "pipeline_seconds": 3105,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013349",
+        "queue_seconds": 3,
+        "job_seconds": 3096,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013350",
+        "queue_seconds": 3,
+        "job_seconds": 967,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013354",
+        "queue_seconds": 12,
+        "job_seconds": 967,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39050198877,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T16:37:11Z",
+    "pipeline_seconds": 2987,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013360",
+        "queue_seconds": 3,
+        "job_seconds": 2977,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013361",
+        "queue_seconds": 3,
+        "job_seconds": 978,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013362",
+        "queue_seconds": 18,
+        "job_seconds": 1041,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39053814831,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T17:27:09Z",
+    "pipeline_seconds": 3411,
+    "jobs": [
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013369",
+        "queue_seconds": 6,
+        "job_seconds": 597,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013370",
+        "queue_seconds": 3,
+        "job_seconds": 716,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013371",
+        "queue_seconds": 2,
+        "job_seconds": 3400,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39057992620,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T18:25:05Z",
+    "pipeline_seconds": 2050,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013378",
+        "queue_seconds": 3,
+        "job_seconds": 2040,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013380",
+        "queue_seconds": 9,
+        "job_seconds": 828,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013379",
+        "queue_seconds": 2,
+        "job_seconds": 1016,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39062371960,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T19:25:05Z",
+    "pipeline_seconds": 3308,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013393",
+        "queue_seconds": 2,
+        "job_seconds": 3299,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013394",
+        "queue_seconds": 2,
+        "job_seconds": 749,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013395",
+        "queue_seconds": 8,
+        "job_seconds": 903,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39066617613,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T20:25:05Z",
+    "pipeline_seconds": 2210,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013402",
+        "queue_seconds": 2,
+        "job_seconds": 2201,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013403",
+        "queue_seconds": 8,
+        "job_seconds": 1135,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013404",
+        "queue_seconds": 3,
+        "job_seconds": 796,
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "github_run": 39070850972,
+    "side": "github",
+    "conclusion": "success",
+    "created_at": "2026-10-17T21:25:05Z",
+    "pipeline_seconds": 2544,
+    "jobs": [
+      {
+        "name": "android-build / gradle (1)",
+        "runner": "GitHub Actions 1000013411",
+        "queue_seconds": 3,
+        "job_seconds": 2534,
+        "conclusion": "success"
+      },
+      {
+        "name": "ios / test (1)",
+        "runner": "GitHub Actions 1000013412",
+        "queue_seconds": 8,
+        "job_seconds": 1031,
+        "conclusion": "success"
+      },
+      {
+        "name": "android-test / gradle (1)",
+        "runner": "GitHub Actions 1000013413",
+        "queue_seconds": 3,
+        "job_seconds": 971,
+        "conclusion": "success"
+      }
+    ]
+  }
+]

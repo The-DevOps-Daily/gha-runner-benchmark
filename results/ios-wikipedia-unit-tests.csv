@@ -1,0 +1,17 @@
+label,github_run,run,started_at,queue_seconds,job_seconds,billed_minutes,price_per_min,cost_usd,cpus,model,build_s,clone_s,packages_s,test_s
+buildhub-ios-m4-large,38891084398,1,2026-10-16T11:02:41Z,44,314,6,0.03,0.1800,5,Apple M4 (Virtual),144,6,30,71
+buildhub-ios-m4-large,38896935935,1,2026-10-16T11:55:39Z,36,323,6,0.03,0.1800,5,Apple M4 (Virtual),145,6,27,86
+buildhub-ios-m4-large,38897038521,1,2026-10-16T12:01:41Z,347,335,6,0.03,0.1800,5,Apple M4 (Virtual),150,6,26,87
+buildhub-ios-m4-xlarge,38891093550,1,2026-10-16T11:02:40Z,38,293,5,0.06,0.3000,10,Apple M4 (Virtual),130,10,26,72
+buildhub-ios-m4-xlarge,38896945267,1,2026-10-16T11:55:39Z,34,295,5,0.06,0.3000,10,Apple M4 (Virtual),132,6,25,76
+buildhub-ios-m4-xlarge,38897048689,1,2026-10-16T12:02:06Z,367,301,6,0.06,0.3600,10,Apple M4 (Virtual),136,7,28,73
+buildhub-ios-m4pro-xlarge,38765104148,1,2026-10-16T10:53:00Z,68023,250,5,,,14,Apple M4 Pro (Virtual),112,5,21,63
+buildhub-ios-m4pro-xlarge,38896956045,1,2026-10-16T11:55:11Z,1,246,5,,,14,Apple M4 Pro (Virtual),110,5,21,63
+buildhub-ios-m4pro-xlarge,38897058522,1,2026-10-16T11:56:06Z,2,251,5,,,14,Apple M4 Pro (Virtual),111,5,22,65
+github-macos-26,38757694137,1,2026-10-15T15:08:54Z,10,1082,19,0.062,1.1780,3,Apple M1 (Virtual),552,12,62,370
+github-macos-26,38760593370,1,2026-10-15T15:28:31Z,10,1074,18,0.062,1.1160,3,Apple M1 (Virtual),542,9,72,373
+github-macos-26,38760593370,2,2026-10-15T15:28:32Z,11,1305,22,0.062,1.3640,3,Apple M1 (Virtual),654,7,82,382
+github-macos-26,38760593370,3,2026-10-15T15:46:35Z,1094,1026,18,0.062,1.1160,3,Apple M1 (Virtual),513,9,62,376
+github-macos-26,38879514090,1,2026-10-16T09:18:25Z,10,1017,17,0.062,1.0540,3,Apple M1 (Virtual),538,7,64,328
+github-macos-26,38896925505,1,2026-10-16T11:55:04Z,8,805,14,0.062,0.8680,3,Apple M1 (Virtual),357,6,42,349
+github-macos-26,38897028274,1,2026-10-16T11:56:02Z,13,972,17,0.062,1.0540,3,Apple M1 (Virtual),525,5,67,318
